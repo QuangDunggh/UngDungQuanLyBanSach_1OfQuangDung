@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thanh toán</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: rgb(125, 180, 111);
+            padding: 0px;
+            text-align: left;
+            font-size: 35px;
+            color: white;
+        }
+
+        /* Create two columns/boxes that floats next to each other */
+
+
+        article {
+            float: left;
+            padding: 10px;
+            width: 100%;
+            background-color: #e6f7f7;
+            height: 100%;
+
+            /* only for demonstration, should be removed */
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+            margin: 2px 0px auto;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 1px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+
+
+        .row {
+            max-width: 1200px;
+        }
+
+        .product {
+            float: left;
+            padding-left: 75px;
+            margin-bottom: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Welcom BookStore</h2>
+
+    <header>
+        <h2>Tât cả sản phẩm mà bạn đã chọn</h2>
+
+    </header>
+
+    <section>
+        <article>
+            <div id="cartBook">
+
+
+            </div>
+
+        </article>
+    </section>
+
+    <footer>
+        <div style="text-align: center;">
+            <button style="padding: 10px;color: #e6f7f7;background: red;" onclick="payProduct()">Thanh toán giỏ hàng</button>
+        </div>
+        <p>Cảm ơn các bạn đã ghé shop</p>
+    </footer>
+
+</body>
+<script src="script/index.js"></script>
+
+</html>

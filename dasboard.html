@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h3 class="heading-3">Add New Book</h3>
+            <div class="add-new-book">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input class="form-control" type="text" name="bookname" id="bookname">
+                </div>
+                <div class="form-group">
+                    <label for="">Price</label>
+                    <input class="form-control" type="number" name="price" id="price">
+                </div>
+                <div class="form-group">
+                    <label for="">Quantity</label>
+                    <input class="form-control" type="number" name="quantity" id="quantity">
+                </div>
+                <div class="form-group">
+                    <label for="">Date</label>
+                    <input class="form-control" type="text" name="dateBook" id="dateBook">
+                </div>
+                <div class="form-group d-none">
+                    <label for="">ID</label>
+                    <input class="form-control " type="number" name="idBook" id="idBook">
+                </div>
+                <div class="form-group">
+                    <label for="">Photo</label>
+                    <input class="form-control" type="url" name="photo" id="photo">
+                </div>
+                <div class="form-group" id="buttoncontrol_1">
+                    <label for=""></label>
+                    <button class="btn btn-primary" onclick="save()">Save</button>
+                    <button class="btn btn-danger d-none" onclick="updateBook()">Update</button>
+                    <button class="btn btn-primary d-none" onclick="clearForm()">Cancel</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=""></label>
+                <input type="text" id="searchBook" style="padding: 5px; border-radius: 6px;" oninput="search()">
+                <button class="btn btn-primary">Search</button>
+            </div>
+
+        </div>
+        <div class="row">
+            <h3 class="heading-3">Display all book</h3>
+            <table>
+                <thead>
+                    <tr class="caption_1">
+                        <th></th>
+                        <th>#ID</th>
+                        <th>Name</th>
+                        <th>Photo</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Date</th>
+                        <th></th>
+                        <th><button onclick="deleteAll()">Delete all</button></th>
+                    </tr>
+                </thead>
+                <tbody id="tbBook">
+
+                </tbody>
+            </table>
+</body>
+<script src="script/dasboard.js"></script>
+
+</html>
