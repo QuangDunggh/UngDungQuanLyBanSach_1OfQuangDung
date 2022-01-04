@@ -56,7 +56,6 @@ function findIndexById(id) {
 }
 
 function getBook(id) {
-    document.querySelector('#numberBooks').innerHTML = `<a target="blank" href='index.html'>Cart(${cartNumber+=1})</a>`;
     findIndexById(id);
     let name = document.querySelector(`#name${id}`).value;
     let photo = document.querySelector(`#photo${id}`).src;
@@ -64,10 +63,12 @@ function getBook(id) {
     let quantity = document.querySelector(`#quantity${id}`).value;
     let idBook = document.querySelector(`#id${id}`).value;
     let quantityIsGet = document.querySelector(`#number${id}`).value;
-    if (quantityIsGet == 0 || quantityIsGet == '') {
+    if (quantityIsGet == 0 || quantityIsGet == '' || quantityIsGet < 0) {
         alert('Vui lòng chọn số lượng sách bạn muốn mua!!!');
+        document.querySelector(`#number${id}`).value = ''
         return;
     }
+    document.querySelector('#numberBooks').innerHTML = `<a target="blank" href='index.html'>Cart(${cartNumber+=1})</a>`;
     document.querySelector(`#number${id}`).value = ''
     let isbookGet = new ProductsCustomer(idBook, name, photo, price, quantity, quantityIsGet);
     cartCustomer.push(isbookGet);

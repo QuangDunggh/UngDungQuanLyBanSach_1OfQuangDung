@@ -23,7 +23,7 @@ let products = [
     new Products(11, 'Chiến thắng con quỷ trong bạn', 'img/id_11.jpg', 100000, 15, '01/01/2021'),
     new Products(12, '7 thói quen hiệu quả', 'img/bayThoiQuenHieuQua.jpg', 75000, 50, '01/01/2021')
 ]
-let localProducts = JSON.parse(window.localStorage.getItem('books'))
+
 
 
 function showBook(data) {
@@ -76,6 +76,10 @@ function save() {
     let price = document.querySelector('#price').value;
     let quantity = document.querySelector('#quantity').value;
     let date = document.querySelector('#dateBook').value;
+    if (name == '' || photo == '' || price == '' || quantity == '' || date == '') {
+        alert('Điền thông tin vào');
+        return
+    }
     let id = findId() + 1;
     let newBook = new Products(id, name, photo, price, quantity, date);
     products.unshift(newBook);
@@ -128,6 +132,10 @@ function updateBook() {
     let date = document.querySelector('#dateBook').value;
     let id = document.querySelector('#idBook').value;
     let updateBook = new Products(id, name, photo, price, quantity, date);
+    if (name == '' || photo == '' || price == '' || quantity == '' || date == '') {
+        alert('Điền thông tin vào');
+        return
+    }
     products.splice(findIndexById(id), 1, updateBook);
     let actionButton = document.querySelector(`#buttoncontrol_1`);
     actionButton.children[1].classList.remove('d-none');
